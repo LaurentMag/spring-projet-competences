@@ -7,8 +7,9 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class PersonneServiceImpl {
+// bonne pratique est d'enlever le @Service sur la class service et à la place on créer un personne config
+//@Service
+public class PersonneServiceImpl implements PersonneService {
 
     private final PersonnesRepository personnesRepository;
 
@@ -17,22 +18,26 @@ public class PersonneServiceImpl {
     }
 
 
+    @Override
     public List<Personne> findAll() {
         return personnesRepository.findAll();
     }
 
 
+    @Override
     public Personne save(Personne personne) {
         return personnesRepository.save(personne);
     }
 
 
+    @Override
     public Personne findById(String id) {
         return personnesRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
 
+    @Override
     public void deleteById(String id) {
         personnesRepository.deleteById(id);
     }
