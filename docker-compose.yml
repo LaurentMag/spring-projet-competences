@@ -8,3 +8,6 @@ services:
     image: mongo-express
     ports:
       - 8081:8081
+    #permet d'attendre que mongo se lance avant de lancer express
+    depend_on:
+      - mongo
