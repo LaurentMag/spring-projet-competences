@@ -33,8 +33,8 @@ public class EquipeController {
     }
 
 
-    @DeleteMapping("")
-    public void deleteById(String id) {
+    @DeleteMapping("{id}")
+    public void deleteById(@PathVariable String id) {
         equipeService.deleteById(id);
     }
 }

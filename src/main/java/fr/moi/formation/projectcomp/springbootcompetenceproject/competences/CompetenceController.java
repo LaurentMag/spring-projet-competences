@@ -33,8 +33,8 @@ public class CompetenceController {
     }
 
 
-    @DeleteMapping("")
-    public void deleteById(String id) {
+    @DeleteMapping("{id}")
+    public void deleteById(@PathVariable String id) {
         competenceService.deleteById(id);
     }
 }

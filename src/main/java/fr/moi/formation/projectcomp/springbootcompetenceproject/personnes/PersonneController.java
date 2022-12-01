@@ -31,8 +31,8 @@ public class PersonneController {
     }
 
 
-    @DeleteMapping("")
-    public void deleteById(String id) {
+    @DeleteMapping("{id}")
+    public void deleteById(@PathVariable String id) {
         personneService.deleteById(id);
     }
 }
