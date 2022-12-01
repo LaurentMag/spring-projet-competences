@@ -8,7 +8,7 @@ public interface CompetenceService {
 
     <S extends Competence> S save(S entity);
 
-    Optional<Competence> findById(String s);
+    Competence findById(String s);
 
     void deleteById(String s);
 }

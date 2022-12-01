@@ -26,7 +26,7 @@ public class PersonneController {
     }
 
     @PostMapping("")
-    public Personne save(Personne personne) {
+    public Personne save(@RequestBody Personne personne) {
         return personneService.save(personne);
     }
 

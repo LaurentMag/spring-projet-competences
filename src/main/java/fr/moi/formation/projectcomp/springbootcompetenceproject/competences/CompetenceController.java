@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/equipes")
+@RequestMapping("/competences")
 public class CompetenceController {
 
     private final CompetenceService competenceService;
@@ -28,7 +28,7 @@ public class CompetenceController {
     }
 
     @PostMapping("")
-    public Competence save(Competence competence) {
+    public Competence save(@RequestBody Competence competence) {
         return competenceService.save(competence);
     }
 

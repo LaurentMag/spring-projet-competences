@@ -28,7 +28,7 @@ public class EquipeController {
     }
 
     @PostMapping("")
-    public Equipe save(Equipe equipe) {
+    public Equipe save(@RequestBody Equipe equipe) {
         return equipeService.save(equipe);
     }
 

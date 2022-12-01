@@ -1,5 +1,8 @@
 package fr.moi.formation.projectcomp.springbootcompetenceproject.competences;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -18,14 +21,14 @@ public class CompetenceServiceImpl implements CompetenceService {
 
 
     @Override
-    public <S extends Competence> S save(S entity) {
+    public Competence save(Competence entity) {
         return competenceRepository.save(entity);
     }
 
 
     @Override
-    public Optional<Competence> findById(String s) {
-        return competenceRepository.findById(s);
+    public Competence findById(String s) {
+        return competenceRepository.findById(s).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     @Override
